@@ -1,0 +1,256 @@
+import { Amenity, RatePlan, GalleryItem, LocalAttraction } from '../types';
+import heroImg from '../assets/images/hero_rv_park_1785266116285.jpg';
+import aboutImg from '../assets/images/about_rv_park_1785266130471.jpg';
+import amenitiesImg from '../assets/images/amenities_park_1785266146259.jpg';
+import lakeFishingImg from '../assets/images/lake_fishing_1785266161869.jpg';
+
+export const PARK_INFO = {
+  name: "South Fork 82 RV Park",
+  tagline: "A peaceful East Texas destination for overnight, weekly, and long-term RV stays.",
+  address: "1105 W. Front, Blossom, TX 75416",
+  cityStateZip: "Blossom, TX 75416",
+  phone: "(903) 703-8591",
+  phoneRaw: "9037038591",
+  email: "fox261@southfork82rvpark.com",
+  googleMapsUrl: "https://www.google.com/maps/dir/?api=1&destination=1105+W.+Front,+Blossom,+TX+75416",
+  googleMapsEmbedUrl: "https://maps.google.com/maps?q=1105%20W.%20Front,%20Blossom,%20TX%2075416&t=&z=14&ie=UTF8&iwloc=&output=embed",
+  images: {
+    hero: heroImg,
+    about: aboutImg,
+    amenities: amenitiesImg,
+    lakeFishing: lakeFishingImg,
+  }
+};
+
+export const AMENITIES_LIST: Amenity[] = [
+  {
+    id: 'full-hookups',
+    name: 'Full Hookups',
+    description: 'Complete water, sewer, and electrical hookups at every single site for maximum convenience.',
+    iconName: 'Plug',
+    category: 'Utilities',
+  },
+  {
+    id: 'amp-service',
+    name: '30/50 Amp Service',
+    description: 'Heavy-duty 30 amp and 50 amp electrical pedestals ready to power rigs of any size.',
+    iconName: 'Zap',
+    category: 'Utilities',
+  },
+  {
+    id: 'water-sewer',
+    name: 'City Water & Sewer',
+    description: 'Reliable city water connections and dedicated sewer hookups at your site.',
+    iconName: 'Droplets',
+    category: 'Utilities',
+  },
+  {
+    id: 'wifi',
+    name: 'High-Speed Wi-Fi',
+    description: 'Stay connected for remote work, streaming, or keeping in touch with loved ones.',
+    iconName: 'Wifi',
+    category: 'Comfort & Convenience',
+  },
+  {
+    id: 'spacious-sites',
+    name: 'Spacious RV Sites',
+    description: 'Generously sized pull-through and back-in sites accommodating large rigs and slide-outs comfortably.',
+    iconName: 'Maximize2',
+    category: 'Site Features',
+  },
+  {
+    id: 'pet-friendly',
+    name: 'Pet Friendly',
+    description: 'We welcome your furry family members! Enjoy safe, grassy walking areas around the park.',
+    iconName: 'Dog',
+    category: 'Atmosphere',
+  },
+  {
+    id: 'laundry',
+    name: 'On-Site Laundry Facilities',
+    description: 'Clean, modern washer and dryer facilities available for guest convenience.',
+    iconName: 'Shirt',
+    category: 'Comfort & Convenience',
+  },
+  {
+    id: 'clean-grounds',
+    name: 'Clean & Maintained Grounds',
+    description: 'Meticulously kept driveways, grassy borders, and trash disposal service.',
+    iconName: 'Sparkles',
+    category: 'Atmosphere',
+  },
+  {
+    id: 'easy-access',
+    name: 'Easy Highway Access',
+    description: 'Conveniently located off US Highway 82 in Blossom, TX—easy pull-in without narrow road stress.',
+    iconName: 'Navigation',
+    category: 'Site Features',
+  },
+  {
+    id: 'quiet-environment',
+    name: 'Quiet Rural Environment',
+    description: 'A serene setting away from heavy city traffic, offering peaceful East Texas nights under the stars.',
+    iconName: 'VolumeX',
+    category: 'Atmosphere',
+  },
+];
+
+export const RATES_LIST: RatePlan[] = [
+  {
+    id: 'nightly',
+    type: 'Nightly',
+    price: '$45',
+    period: 'per night',
+    subtitle: 'Perfect for overnight travelers & weekend getaways',
+    features: [
+      'Full 30/50 Amp Electrical Hookup',
+      'Water & Sewer Included',
+      'High-Speed Wi-Fi Access',
+      'Trash Service Included',
+      'Pet Friendly Site',
+      'Pull-Through or Back-In Options',
+    ],
+    note: 'Rates are subject to seasonal updates. No hidden utility fees.',
+  },
+  {
+    id: 'weekly',
+    type: 'Weekly',
+    price: '$240',
+    period: 'per week',
+    subtitle: 'Ideal for short vacations, workers & temporary stays',
+    popular: true,
+    features: [
+      'Discounted Weekly Rate (~$34/night)',
+      'Full 30/50 Amp Electrical Hookup',
+      'Water & Sewer Included',
+      'High-Speed Wi-Fi Access',
+      'On-Site Laundry Access',
+      'Trash Service Included',
+    ],
+    note: 'Great value for 7 consecutive nights of peaceful East Texas stay.',
+  },
+  {
+    id: 'monthly',
+    type: 'Monthly',
+    price: '$550',
+    period: 'per month (+ metered electric)',
+    subtitle: 'Best rate for long-term RVers & seasonal residents',
+    features: [
+      'Lowest Daily Cost Equivalent (~$18/day)',
+      'Dedicated Electric Meter at Site',
+      'City Water & Sewer Included',
+      'High-Speed Wi-Fi Access',
+      'On-Site Laundry Access',
+      'Mail Delivery Support',
+    ],
+    note: 'Electric metered individually per site at standard utility rates.',
+  },
+];
+
+export const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: '1',
+    src: heroImg,
+    alt: 'South Fork 82 RV Park hero grounds at golden hour',
+    title: 'Peaceful RV Park Grounds',
+    caption: 'Modern RVs resting comfortably on spacious concrete pads surrounded by green foliage.',
+    category: 'Grounds',
+  },
+  {
+    id: '2',
+    src: aboutImg,
+    alt: 'Spacious RV sites with pull-through access',
+    title: 'Spacious Pull-Through Sites',
+    caption: 'Generously proportioned sites designed for easy parking and outdoor relaxation.',
+    category: 'RVs & Sites',
+  },
+  {
+    id: '3',
+    src: amenitiesImg,
+    alt: 'Utility pedestals with 30/50 Amp, water, and sewer',
+    title: 'Full Hookup Pedestals',
+    caption: 'Clean, reliable 30/50 Amp electrical boxes, fresh water, and sewer hookups.',
+    category: 'Amenities',
+  },
+  {
+    id: '4',
+    src: lakeFishingImg,
+    alt: 'Sunrise fishing at nearby East Texas lake',
+    title: 'Pat Mayse Lake Fishing & Sunset',
+    caption: 'Located just minutes from South Fork 82 RV Park for world-class bass fishing and boating.',
+    category: 'Surrounding Nature',
+  },
+  {
+    id: '5',
+    src: 'https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Sunset over campsite in Texas countryside',
+    title: 'East Texas Golden Sunset',
+    caption: 'Quiet, scenic evenings and clear starry nights in Blossom, TX.',
+    category: 'Surrounding Nature',
+  },
+  {
+    id: '6',
+    src: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Cozy RV campsite with campfire and seating',
+    title: 'Relaxing Outdoor Spaces',
+    caption: 'Ample elbow room around your rig for lounge chairs and outdoor cooking.',
+    category: 'RVs & Sites',
+  },
+];
+
+export const LOCAL_ATTRACTIONS: LocalAttraction[] = [
+  {
+    id: 'pat-mayse-lake',
+    name: 'Pat Mayse Lake & Recreation Area',
+    category: 'Fishing & Lakes',
+    distance: '15 mins north',
+    description: 'A 6,000-acre lake renowned for largemouth bass, crappie, catfish, swimming beaches, boating ramps, and nature trails.',
+    image: lakeFishingImg,
+    highlights: ['Boating & Kayaking', 'Bass & Catfish Fishing', 'Sandy Swimming Beaches', 'Picnic Pavilions'],
+  },
+  {
+    id: 'eiffel-tower-paris-tx',
+    name: 'Paris Texas Eiffel Tower with Red Cowboy Hat',
+    category: 'Historic & Shopping',
+    distance: '12 mins west',
+    description: 'The famous 65-foot replica of the Eiffel Tower wearing a giant red cowboy hat! A fun photo opportunity and iconic local landmark.',
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80',
+    highlights: ['Iconic Texas Landmark', 'Photo Spot', 'Adjacent Civic Center', 'Nearby Trail Access'],
+  },
+  {
+    id: 'trail-de-paris',
+    name: 'Trail de Paris & Northeast Texas Trail',
+    category: 'Parks & Trails',
+    distance: '10 mins west',
+    description: 'Paved, tree-shaded multi-use trail perfect for walking, jogging, cycling, and wildlife viewing connecting Blossom and Paris, TX.',
+    image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80',
+    highlights: ['Paved Walking & Bike Paths', 'Shaded Canopy', 'Pet Friendly', 'Connects Local Towns'],
+  },
+  {
+    id: 'downtown-paris-square',
+    name: 'Historic Downtown Paris Square & Dining',
+    category: 'Historic & Shopping',
+    distance: '10 mins west',
+    description: 'Charming historic town square featuring local antique shops, boutique stores, bakery, coffee shops, and authentic Texas BBQ.',
+    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80',
+    highlights: ['Antique Shopping', 'Local Texas BBQ', 'Farmers Market', 'Historic Culbertson Fountain'],
+  },
+  {
+    id: 'lamar-county-wildlife',
+    name: 'Lamar County Wildlife Management Area',
+    category: 'Parks & Trails',
+    distance: '15 mins',
+    description: 'Expansive natural habitat for birdwatching, seasonal hunting, outdoor photography, and serene East Texas woodland scenery.',
+    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80',
+    highlights: ['Bird Watching', 'Nature Photography', 'Woodland Trails', 'Peaceful Habitat'],
+  },
+  {
+    id: 'lake-crook',
+    name: 'Lake Crook Reservoir',
+    category: 'Fishing & Lakes',
+    distance: '14 mins',
+    description: 'A serene municipal lake offering quiet bank fishing, public boat ramps, and beautiful sunset views across the water.',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+    highlights: ['Quiet Water', 'Bank Fishing', 'Sunset Views', 'Boat Ramps'],
+  },
+];

@@ -1,0 +1,6 @@
+{
+  "name": "South Fork 82 RV Park",
+  "description": "Official website for South Fork 82 RV Park in Blossom, TX. Offering peaceful overnight, weekly, and long-term RV stays with full hookups, 30/50 amp, Wi-Fi, and Texas hospitality.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
