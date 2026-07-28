@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Calendar, Phone, MapPin, CheckCircle2, Star, ArrowRight, ShieldCheck, Compass, Sparkles, ChevronRight } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Calendar, Phone, MapPin, CheckCircle2, Star, ArrowRight, ShieldCheck, Compass, Sparkles, ChevronRight, Volume2, VolumeX } from 'lucide-react';
 import { Page } from '../types';
 import { PARK_INFO, AMENITIES_LIST, RATES_LIST } from '../data/parkData';
 
@@ -12,6 +12,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking })
   // Stay estimator calculator state
   const [stayType, setStayType] = useState<'Nightly' | 'Weekly' | 'Monthly'>('Nightly');
   const [duration, setDuration] = useState<number>(3);
+  const [isMuted, setIsMuted] = useState<boolean>(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
 
   const calculateEstimate = () => {
     if (stayType === 'Nightly') return `$${duration * 45}`;
@@ -24,17 +33,50 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking })
       
       {/* HERO SECTION */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#2D4636] text-[#FDFCF8] py-20 lg:py-32">
-        {/* Background Image with Overlay */}
+        {/* Background Video with Overlay */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={PARK_INFO.images.hero}
-            alt="South Fork 82 RV Park scenic view"
-            referrerPolicy="no-referrer"
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={PARK_INFO.images.hero}
             className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000"
-          />
+          >
+            <source
+              src="https://vbq22dt2m5zj2dat.public.blob.vercel-storage.com/Create_video_South_Fork_RV_202607290050.mp4"
+              type="video/mp4"
+            />
+            <img
+              src={PARK_INFO.images.hero}
+              alt="South Fork 82 RV Park scenic view"
+              className="w-full h-full object-cover object-center"
+            />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-r from-[#2D4636]/95 via-[#2D4636]/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#2D4636] via-transparent to-black/30" />
         </div>
+
+        {/* Video Audio Control Toggle */}
+        <button
+          onClick={toggleMute}
+          aria-label={isMuted ? "Unmute video audio" : "Mute video audio"}
+          title={isMuted ? "Unmute video" : "Mute video"}
+          className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 z-20 flex items-center gap-2 bg-black/40 hover:bg-black/60 backdrop-blur-md text-white px-3.5 py-2 rounded-full border border-white/20 text-xs font-medium transition-all shadow-lg group"
+        >
+          {isMuted ? (
+            <>
+              <VolumeX className="w-4 h-4 text-[#C5A072] group-hover:scale-110 transition-transform" />
+              <span className="hidden sm:inline text-[11px] uppercase tracking-wider font-semibold">Sound Off</span>
+            </>
+          ) : (
+            <>
+              <Volume2 className="w-4 h-4 text-[#C5A072] group-hover:scale-110 transition-transform animate-pulse" />
+              <span className="hidden sm:inline text-[11px] uppercase tracking-wider font-semibold text-[#C5A072]">Sound On</span>
+            </>
+          )}
+        </button>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 w-full">
