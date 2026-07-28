@@ -54,8 +54,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking })
               className="w-full h-full object-cover object-center"
             />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2D4636]/95 via-[#2D4636]/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#2D4636] via-transparent to-black/30" />
+          <div className="absolute inset-0 bg-[#2D4636]/60 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2D4636] via-transparent to-black/40" />
         </div>
 
         {/* Video Audio Control Toggle */}
@@ -79,8 +79,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking })
         </button>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 w-full">
-          <div className="max-w-2xl space-y-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 w-full text-center">
+          <div className="max-w-3xl mx-auto space-y-6 flex flex-col items-center">
             
             {/* Location Badge */}
             <div className="inline-flex items-center gap-2 bg-[#E1EAF0]/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 text-xs font-semibold tracking-widest uppercase text-[#E1EAF0] shadow-sm">
@@ -95,12 +95,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking })
             </h1>
 
             {/* Subheading */}
-            <p className="text-base sm:text-xl text-[#E1EAF0]/90 font-light leading-relaxed">
+            <p className="text-base sm:text-xl text-[#E1EAF0]/90 font-light leading-relaxed max-w-2xl">
               A peaceful East Texas destination for overnight, weekly, and long-term RV stays under majestic Texas skies.
             </p>
 
             {/* Key Value Badges */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[#E1EAF0] font-medium pt-1">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-[#E1EAF0] font-medium pt-1">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#C5A072]" /> Full 30/50 Amp Hookups
               </span>
@@ -113,7 +113,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking })
             </div>
 
             {/* Prominent CTA Buttons */}
-            <div className="pt-4 flex flex-wrap items-center gap-4">
+            <div className="pt-4 flex flex-wrap justify-center items-center gap-4">
               <button
                 onClick={onOpenBooking}
                 id="hero-book-stay-btn"
